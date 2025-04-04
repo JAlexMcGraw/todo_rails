@@ -1,0 +1,24 @@
+<% if user_signed_in? %>
+  <h1>Todo Items</h1>
+  <table class="table table-hover">
+      <thead class="table-light">
+        <tr>
+          <th>Activity</th>
+          <th>Duration</th>
+          <th>Is Completed</th>
+          <th>User Id</th>
+          <th colspan=''></th>
+        </tr>
+      </thead>
+
+      <tbody>
+          <% @todos.each do |todo| %>
+            <%= render todo %>
+          <% end %>
+      </tbody>
+  </table>
+
+  <%= link_to "New todo", new_todo_path, class: "btn btn-primary" %>
+<% else %>
+  <h1> To Do List! </h1>
+<% end %>

@@ -1,0 +1,20 @@
+<div class="mt-4 p-5 bg-secondary text-white rounded">
+  <h1><%= @todo.activity %></h1>
+  <p>
+    <strong> Duration (Hours): </strong>
+    <%= @todo.duration %>
+  </p>
+
+  <p>
+    <strong> Is Completed: </strong>
+    <%= @todo.is_completed %>
+  </p>
+</div>
+</br>
+
+<div>
+  <%= link_to "Edit this todo", edit_todo_path(@todo), class: "btn btn-dark" %>
+  <%= link_to "Back to todos", todos_path, class: "btn btn-secondary" %>
+  </br> </br>
+  <%= button_to "Delete this activity", @todo, method: :delete, class: "btn btn-danger" %>
+</div>
